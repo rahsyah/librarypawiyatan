@@ -1,337 +1,283 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
-<meta charset="utf-8">
-<title>Delight Free Bootstrap Theme | webthemez</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="" />
-<meta name="author" content="http://webthemez.com" />
-<!-- css -->
-<link href="css/bootstrap.min.css" rel="stylesheet" />
-<link href="css/fancybox/jquery.fancybox.css" rel="stylesheet">
-<link href="css/jcarousel.css" rel="stylesheet" />
-<link href="css/flexslider.css" rel="stylesheet" />
-<link href="js/owl-carousel/owl.carousel.css" rel="stylesheet"> 
-<link href="css/style.css" rel="stylesheet" />
- 
-<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
-<!--[if lt IE 9]>
-      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perpustakaan Digital Modern</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in {
+            animation: fadeIn 1s ease-out forwards;
+        }
+        .book-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        #searchResults {
+            max-height: 300px;
+            overflow-y: auto;
+        }
+    </style>
 </head>
-<body>
-<div id="wrapper">
-	<!-- start header -->
-	<header>
-	<section class="contactInfo">
-	<div class="container"> 
-                   
-
-                    <div class="col-md-12"> 
-                            <div class="contact-area">
-                                <ul>
-                                    <li><i class="fa fa-phone-square"></i>812-123-456</li>
-                                    <li><i class="fa fa-envelope-o"></i>info@Delight.com</li>
-                                </ul>
-                            </div> 
-                    </div> 
-            </div>
-		</section>	
-        <div class="navbar navbar-default navbar-static-top">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="index.html"><img src="img/logo.png" alt="logo"/></a>
+<body class="font-poppins bg-gray-50">
+    <!-- Header -->
+    <header class="bg-emerald-800 text-white shadow-lg">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-4">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/ec26aa19-227d-4d52-bdaf-cfa487113049.png" alt="Logo Perpustakaan - Buku terbuka dengan pena di atasnya" class="h-12">
+                    <span class="text-xl font-bold">Perpustakaan Digital</span>
                 </div>
-                <div class="navbar-collapse collapse ">
-                    <ul class="nav navbar-nav">
-                        <li class="active"><a href="index.html">Home</a></li> 
-						<li><a href="about.html">About Us</a></li>
-						<li><a href="services.html">Services</a></li>
-                        <li><a href="portfolio.html">Portfolio</a></li>
-                        <li><a href="pricing.html">Pricing</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#" class="hover:text-emerald-200 transition">Beranda</a>
+                    <a href="#" class="hover:text-emerald-200 transition">Koleksi</a>
+                    <a href="#" class="hover:text-emerald-200 transition">Layanan</a>
+                    <a href="#" class="hover:text-emerald-200 transition">Tentang</a>
+                    <button class="bg-white text-emerald-800 px-4 py-2 rounded-lg font-medium hover:bg-emerald-100 transition">Masuk</button>
+                </div>
+                <button class="md:hidden">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-emerald-700 to-teal-600 text-white py-16">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-10 md:mb-0 animate-fade-in">
+                <h1 class="text-4xl md:text-5xl font-bold mb-6">Temukan Dunia di Dalam Buku</h1>
+                <p class="text-xl mb-8">Jelajahi koleksi lebih dari 50.000 buku digital dan fisik dari berbagai genre dan bidang ilmu.</p>
+                <div class="relative max-w-md">
+                    <input type="text" placeholder="Cari buku, penulis, atau genre..." 
+                           class="w-full px-4 py-3 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-emerald-400">
+                    <button class="absolute right-2 top-2 bg-emerald-600 text-white px-4 py-1 rounded-lg hover:bg-emerald-700 transition">
+                        Cari
+                    </button>
+                </div>
+            </div>
+            <div class="md:w-1/2 animate-fade-in">
+                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/da3fc44a-d44c-4317-b39d-1cb20488ac47.png" alt="Interior perpustakaan modern dengan rak buku tinggi dan area membaca yang nyaman, cahaya alami masuk melalui jendela besar" class="rounded-lg shadow-xl">
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Books -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Buku Terpopuler</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Book 1 -->
+                <div class="book-card bg-white rounded-xl overflow-hidden shadow-md transition duration-300">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/3ab703e0-79b6-48fe-aced-1fb9e4328d3c.png" alt="Sampul buku fiksi ilmiah dengan desain futuristik berwarna biru metalik" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg mb-1">Petualangan Antar Bintang</h3>
+                        <p class="text-gray-600 text-sm mb-2">Penulis: Budi Sastro</p>
+                        <div class="flex items-center mb-2">
+                            <div class="flex text-yellow-400">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                </svg>
+                                <span class="text-gray-600 text-xs ml-1">4.5</span>
+                            </div>
+                        </div>
+                        <button class="w-full bg-emerald-100 text-emerald-800 py-2 rounded-lg text-sm font-medium hover:bg-emerald-200 transition">Pinjam</button>
+                    </div>
+                </div>
+                
+                <!-- Book 2 -->
+                <div class="book-card bg-white rounded-xl overflow-hidden shadow-md transition duration-300">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/f86e5629-35ea-439c-8278-a9cdf34a0f07.png" alt="Sampul buku sejarah dengan latar belakang merah dan ilustrasi istana kerajaan" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg mb-1">Sejarah Nusantara</h3>
+                        <p class="text-gray-600 text-sm mb-2">Penulis: Dr. Ani Wibowo</p>
+                        <div class="flex items-center mb-2">
+                            <div class="flex text-yellow-400">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                </svg>
+                                <span class="text-gray-600 text-xs ml-1">4.8</span>
+                            </div>
+                        </div>
+                        <button class="w-full bg-emerald-100 text-emerald-800 py-2 rounded-lg text-sm font-medium hover:bg-emerald-200 transition">Pinjam</button>
+                    </div>
+                </div>
+                
+                <!-- Book 3 -->
+                <div class="book-card bg-white rounded-xl overflow-hidden shadow-md transition duration-300">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/b4ecafd9-6eb0-45c2-961f-893b44964188.png" alt="Sampul buku sains dengan ilustrasi molekul dan latar belakang ungu" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg mb-1">Misteri Biologi Molekuler</h3>
+                        <p class="text-gray-600 text-sm mb-2">Penulis: Prof. Dian Kusuma</p>
+                        <div class="flex items-center mb-2">
+                            <div class="flex text-yellow-400">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                </svg>
+                                <span class="text-gray-600 text-xs ml-1">4.3</span>
+                            </div>
+                        </div>
+                        <button class="w-full bg-emerald-100 text-emerald-800 py-2 rounded-lg text-sm font-medium hover:bg-emerald-200 transition">Pinjam</button>
+                    </div>
+                </div>
+                
+                <!-- Book 4 -->
+                <div class="book-card bg-white rounded-xl overflow-hidden shadow-md transition duration-300">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/b76f6b82-baac-4ade-a29e-2c48a19c396c.png" alt="Sampul buku motivasi dengan desain minimalis berwarna oranye dan hitam" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg mb-1">Seni Produktivitas</h3>
+                        <p class="text-gray-600 text-sm mb-2">Penulis: Rina Hartono</p>
+                        <div class="flex items-center mb-2">
+                            <div class="flex text-yellow-400">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                </svg>
+                                <span class="text-gray-600 text-xs ml-1">4.7</span>
+                            </div>
+                        </div>
+                        <button class="w-full bg-emerald-100 text-emerald-800 py-2 rounded-lg text-sm font-medium hover:bg-emerald-200 transition">Pinjam</button>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-10">
+                <button class="bg-emerald-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-emerald-700 transition">Lihat Semua Buku</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Search Section -->
+    <section class="py-16 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Cari Buku</h2>
+            <div class="max-w-3xl mx-auto">
+                <div class="relative">
+                    <input type="text" id="searchInput" placeholder="Ketik judul buku, penulis, atau kategori..." 
+                           class="w-full px-6 py-4 rounded-full shadow-md focus:outline-none focus:ring-2 focus:ring-emerald-400">
+                    <button onclick="searchBooks()" class="absolute right-3 top-3 bg-emerald-600 text-white px-6 py-2 rounded-full hover:bg-emerald-700 transition">
+                        Cari
+                    </button>
+                </div>
+                <div id="searchResults" class="mt-4 bg-white rounded-lg shadow-md hidden"></div>
+            </div>
+            
+            <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-emerald-100 p-3 rounded-full mr-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2" />
+                            </svg>
+                        </div>
+                        <h3 class="font-bold text-lg">Koleksi Digital</h3>
+                    </div>
+                    <p class="text-gray-600">Akses ribuan buku digital dari mana saja melalui perangkat Anda.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-emerald-100 p-3 rounded-full mr-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                            </svg>
+                        </div>
+                        <h3 class="font-bold text-lg">Pinjam Buku Fisik</h3>
+                    </div>
+                    <p class="text-gray-600">Pinjam buku fisik dari berbagai koleksi kami yang lengkap.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-emerald-100 p-3 rounded-full mr-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                            </svg>
+                        </div>
+                        <h3 class="font-bold text-lg">Literatur Berbahasa</h3>
+                    </div>
+                    <p class="text-gray-600">Buku dalam berbagai bahasa untuk mendukung pembelajaran bahasa asing.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-10 md:mb-0">
+                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/e79efe27-883d-4cde-b16c-c6354c6957b6.png" alt="Gedung perpustakaan modern dengan fasad kaca dan taman di depannya" class="rounded-lg shadow-xl">
+            </div>
+            <div class="md:w-1/2 md:pl-12">
+                <h2 class="text-3xl font-bold mb-6 text-gray-800">Tentang Perpustakaan Kami</h2>
+                <p class="text-gray-600 mb-4">Perpustakaan Digital Modern didirikan pada tahun 2020 dengan misi untuk menyediakan akses informasi yang mudah bagi semua kalangan.</p>
+                <p class="text-gray-600 mb-6">Kami memiliki koleksi lebih dari 50.000 buku fisik dan digital yang mencakup berbagai bidang ilmu, sastra, dan referensi umum.</p>
+                <div class="flex space-x-4">
+                    <div class="bg-emerald-100 px-4 py-3 rounded-lg">
+                        <p class="text-emerald-800 font-bold text-xl">50K+</p>
+                        <p class="text-gray-600 text-sm">Koleksi Buku</p>
+                    </div>
+                    <div class="bg-emerald-100 px-4 py-3 rounded-lg">
+                        <p class="text-emerald-800 font-bold text-xl">24/7</p>
+                        <p class="text-gray-600 text-sm">Akses Digital</p>
+                    </div>
+                    <div class="bg-emerald-100 px-4 py-3 rounded-lg">
+                        <p class="text-emerald-800 font-bold text-xl">10+</p>
+                        <p class="text-gray-600 text-sm">Kategori Buku</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white pt-12 pb-6">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="font-bold text-xl mb-4">Perpustakaan Digital</h3>
+                    <p class="text-gray-400">Menyediakan akses pengetahuan untuk semua kalangan.</p>
+                    <div class="flex space-x-4 mt-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z" />
+                            </svg>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                            </svg>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Layanan</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Pinjam Buku</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Buku Digital</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Ruang Baca</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Program Literasi</a></li>
                     </ul>
                 </div>
-            </div>
-        </div>
-	</header>
-	<!-- end header -->
-	<section id="featured">
-	 
-	<!-- Slider -->
-        <div id="main-slider" class="flexslider">
-            <ul class="slides">
-              <li>
-                <img src="img/slides/1.jpg" alt="" />
-                <div class="flex-caption">
-                    <h3>Elegant Design</h3> 
-					<p>Doloribus omnis minus temporibus perfe.</p>  
-                </div>
-              </li>
-              <li>
-                <img src="img/slides/2.jpg" alt="" />
-                <div class="flex-caption">
-                    <h3>Multi-purpose Theme</h3> 
-					<p>Lorem ipsum dolor sit amet, consectetur adip.</p> 
-                </div>
-              </li>
-              <li>
-                <img src="img/slides/3.jpg" alt="" />
-                <div class="flex-caption">
-                    <h3>Fully Responsive</h3> 
-					<p>Lorem ipsum dolor sit amet, consectetur..</p>  
-                </div>
-              </li>
-            </ul>
-        </div>
-	<!-- end slider -->
- 
-	</section> 
-		<section id="content">
-	
-	<div class="container">
-			<div class="row">
-				<div class="col-lg-6 col-md-6 col-sm-6">
-                 <img src="img/1.jpg" alt="" />
-				</div>
-				<div class="col-lg-6 col-md-6 col-sm-6">
-                    <div>
-					    <h2>Who We Are</h2> 
-    					<p>Sed ut perspiciaatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur.</p>
-						<p>Sed ut perspiciaatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore Sed viverra lorem vel felis lobortis, sed aliquam augue iaculis</p>
-    					<div class="row">
-    						<div class="col-lg-4 col-md-4 col-sm-4">
-    							<ul class="list list-3">
-    								<li>Designing</li>
-                                    <li>Development</li>
-                                    <li>Web Services</li>
-                                    <li>Hosting</li>
-    							</ul>
-                            </div>
-                            <div class="col-lg-4 col-md-4 col-sm-4">
-    							<ul class="list list-3">
-    								<li>Copy writing</li>
-                                    <li>On-line Shopping</li>
-                                    <li>SAP</li>
-                                    <li>Testing</li>
-    							</ul>
-                            </div>
-                            <div class="col-lg-4 col-md-4 col-sm-4">
-    							<ul class="list list-3">
-    								<li>Mobile</li>
-                                    <li>Database</li>
-                                    <li>User Experience</li>
-                                    <li>Product</li>
-    							</ul>
-    						</div>
-    					</div>
-                    </div>
-				</div>
-			</div>
-		</div>
-	 
-	</section>
-	
-	
-	<section id="service">
-            <div class="container"> 
-				<div class="row">
-					<div class="col-md-12">
-						<div class="block-bottom">
-							<div class="service-tab">
-								  <!-- Nav tabs -->
-								  <ul class="badhon-tab" role="tablist">
-									<li class=""><a href="#home" aria-controls="home" role="tab" data-toggle="tab">
-									<i class="fa fa-bell-o"></i>
-									Designing
-									</a></li>
-									<li class="active"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">
-									<i class="fa fa-html5"></i>
-									Web Development
-									</a></li>
-									<li><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">
-									<i class="fa fa-code"></i>
-									Mobile Web
-									</a></li>
-									<li><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">
-									<i class="fa fa-compress"></i>
-									Product Dev
-									</a></li> 
-								  </ul>
+                
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Kontak</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                            Jl. Pendidikan No. 123, Jakarta
 
-								  <!-- Tab panes -->
-								  <div class="tab-content edit-tab-content">
-									<div class="tab-pane edit-tab" id="home">
-										<h3>Awesome Web Design</h3>
-										<p>Sed ut perspiciaatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur. <br><br>Sed ut perspiciaatis iste natus error sit voluptatem probably haven't heard of them accusamus.</p>
-								<p>Voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo quasi architecto beatae vitae dicta sunt explicabo.</p>
-									</div>
-									<div class="tab-pane edit-tab active" id="profile">
-										<h3>Amazing Web Development</h3>
-										<p>Sed ut perspiciaatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur. <br><br>Sed ut perspiciaatis iste natus error sit voluptatem probably haven't heard of them accusamus.</p>
-								<p>Voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo quasi architecto beatae vitae dicta sunt explicabo.</p>
-									</div>
-									<div class="tab-pane edit-tab" id="messages">
-										<h3>Fully Responsive Web</h3>
-										<p>Sed ut perspiciaatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur. <br><br>Sed ut perspiciaatis iste natus error sit voluptatem probably haven't heard of them accusamus.</p>
-								<p>Voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo quasi architecto beatae vitae dicta sunt explicabo.</p>
-									</div>
-									<div class="tab-pane edit-tab" id="settings">
-										<h3>Well Build Product Dev</h3>
-										<p>Sed ut perspiciaatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur. <br><br>Sed ut perspiciaatis iste natus error sit voluptatem probably haven't heard of them accusamus.</p>
-								<p>Voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo quasi architecto beatae vitae dicta sunt explicabo.</p>
-									</div> 
-								  </div>
-							</div>
-						</div>
-					</div><!-- .col-md-12 close -->
-				</div><!-- row close -->
-            </div><!-- .container close -->
-        </section>
-	
-	
-<div class="testimonial-area">
-    <div class="testimonial-solid">
-        <div class="container"> 
-            <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-                <ol class="carousel-indicators">
-                    <li data-Delight="#carousel-example-generic" data-slide-to="0" class="">
-                        <a href="#"></a>
-                    </li>
-                    <li data-Delight="#carousel-example-generic" data-slide-to="1" class="">
-                        <a href="#"></a>
-                    </li>
-                    <li data-Delight="#carousel-example-generic" data-slide-to="2" class="active">
-                        <a href="#"></a>
-                    </li>
-                    <li data-Delight="#carousel-example-generic" data-slide-to="3" class="">
-                        <a href="#"></a>
-                    </li>
-                </ol>
-                <div class="carousel-inner">
-                    <div class="item">
-                        <p>Blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi.</p>
-                        <p>
-                            <b>- Mark John -</b>
-                        </p>
-                    </div>
-                    <div class="item">
-                        <p>Blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi.</p>
-                        <p>
-                            <b>- Jaison Warner -</b>
-                        </p>
-                    </div>
-                    <div class="item active">
-                        <p>Blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi.</p>
-                        <p>
-                            <b>- Tony Antonio -</b>
-                        </p>
-                    </div>
-                    <div class="item">
-                        <p>Blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi.</p>
-                        <p>
-                            <b>- Leena Doe -</b>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-	<footer>
-	<div class="container">
-		<div class="row">
-			<div class="col-md-3">
-				<div class="widget">
-					<h5 class="widgetheading">Our Contact</h5>
-					<address>
-					<strong>Delight company Inc</strong><br>
-					JC Main Road, Near Silnile tower<br>
-					 Pin-21542 NewYork US.</address>
-					<p>
-						<i class="icon-phone"></i> (123) 456-789 - 1255-12584 <br>
-						<i class="icon-envelope-alt"></i> email@domainname.com
-					</p>
-				</div>
-			</div>
-			<div class="col-md-3">
-				<div class="widget">
-					<h5 class="widgetheading">Quick Links</h5>
-					<ul class="link-list">
-						<li><a href="#">Latest Events</a></li>
-						<li><a href="#">Terms and conditions</a></li>
-						<li><a href="#">Privacy policy</a></li>
-						<li><a href="#">Career</a></li>
-						<li><a href="#">Contact us</a></li>
-					</ul>
-				</div>
-			</div>
-			<div class="col-md-3">
-				<div class="widget">
-					<h5 class="widgetheading">Latest posts</h5>
-					<ul class="link-list">
-						<li><a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
-						<li><a href="#">Pellentesque et pulvinar enim. Quisque at tempor ligula</a></li>
-						<li><a href="#">Natus error sit voluptatem accusantium doloremque</a></li>
-					</ul>
-				</div>
-			</div>
-			<div class="col-md-3">
-				<div class="widget">
-					<h5 class="widgetheading">Recent News</h5>
-					<ul class="link-list">
-						<li><a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
-						<li><a href="#">Pellentesque et pulvinar enim. Quisque at tempor ligula</a></li>
-						<li><a href="#">Natus error sit voluptatem accusantium doloremque</a></li>
-					</ul>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div id="sub-footer">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-6">
-					<div class="copyright">
-						<p>
-							<span>&copy; Delight 2015 All right reserved. By </span><a href="http://webthemez.com" Delight="_blank">WebThemez</a>
-						</p>
-					</div>
-				</div>
-				<div class="col-lg-6">
-					<ul class="social-network">
-						<li><a href="#" data-placement="top" title="Facebook"><i class="fa fa-facebook"></i></a></li>
-						<li><a href="#" data-placement="top" title="Twitter"><i class="fa fa-twitter"></i></a></li>
-						<li><a href="#" data-placement="top" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
-						<li><a href="#" data-placement="top" title="Pinterest"><i class="fa fa-pinterest"></i></a></li>
-						<li><a href="#" data-placement="top" title="Google plus"><i class="fa fa-google-plus"></i></a></li>
-					</ul>
-				</div>
-			</div>
-		</div>
-	</div>
-	</footer>
-</div>
-<a href="#" class="scrollup"><i class="fa fa-angle-up active"></i></a>
-<!-- javascript
-    ================================================== -->
-<!-- Placed at the end of the document so the pages load faster -->
-<script src="js/jquery.js"></script>
-<script src="js/jquery.easing.1.3.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/jquery.fancybox.pack.js"></script>
-<script src="js/jquery.fancybox-media.js"></script> 
-<script src="js/portfolio/jquery.quicksand.js"></script>
-<script src="js/portfolio/setting.js"></script>
-<script src="js/jquery.flexslider.js"></script>
-<script src="js/animate.js"></script>
-<script src="js/custom.js"></script>
-<script src="js/owl-carousel/owl.carousel.js"></script>
-</body>
-</html>
